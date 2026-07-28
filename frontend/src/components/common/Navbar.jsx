@@ -14,8 +14,8 @@ export const Navbar = () => {
           onClick={() => navigateTo('landing')}
           className="flex items-center space-x-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center text-white shadow-md shadow-indigo-500/25 group-hover:scale-105 transition-transform">
-            <Beaker className="w-6 h-6 animate-pulse" />
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-700 flex items-center justify-center text-white shadow-md shadow-indigo-500/25 group-hover:scale-105 transition-transform p-2 border border-indigo-400/30">
+            <img src="/favicon.svg" alt="VirtuLab Logo" className="w-full h-full object-contain filter drop-shadow-sm" />
           </div>
           <div>
             <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">

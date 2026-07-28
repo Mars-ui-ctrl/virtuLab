@@ -259,12 +259,12 @@ export const LandingPageView = () => {
       <footer className="bg-slate-900 text-white py-8 border-t border-slate-800 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-2">
-            <div className="w-7 h-7 rounded-lg gradient-primary flex items-center justify-center text-white">
-              <Beaker className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-xl bg-indigo-600/90 flex items-center justify-center text-white p-1.5 border border-indigo-500/30">
+              <img src="/favicon.svg" alt="VirtuLab Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-bold text-white text-sm">VirtuLab EdTech</span>
           </div>
-          <p>© 2026 VirtuLab. Practical Science. Virtual Experience. College Exhibition Demo.</p>
+          <p>© 2026 VirtuLab. Practical Science. Virtual Experience.</p>
         </div>
       </footer>
 
