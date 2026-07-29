@@ -40,14 +40,14 @@ export const StudentDashboardView = () => {
   }, [studentStats.xp, studentStats.hoursPracticed, studentStats.completedCount]);
 
   // Calculate real subject progress percentages dynamically based on actual completed experiments
-  const physicsCompleted = completedExperiments.has('phys-circuit') || completedExperiments.has('phys-pendulum') || completedExperiments.has('phys-projectile');
-  const chemCompleted = completedExperiments.has('chem-neutralization') || completedExperiments.has('chem-heating') || completedExperiments.has('chem-ph-test');
-  const elecCompleted = completedExperiments.has('elec-led-circuit') || completedExperiments.has('elec-traffic-light') || completedExperiments.has('elec-temp-fan');
+  const physicsCount = ['phys-circuit', 'phys-pendulum', 'phys-projectile'].filter(id => completedExperiments.has(id)).length;
+  const chemCount = ['chem-neutralization', 'chem-heating', 'chem-ph-test'].filter(id => completedExperiments.has(id)).length;
+  const elecCount = ['elec-led-circuit', 'elec-traffic-light', 'elec-temp-fan'].filter(id => completedExperiments.has(id)).length;
 
-  const physicsPct = completedExperiments.has('phys-circuit') ? (completedExperiments.has('phys-pendulum') ? 100 : 50) : 0;
-  const chemPct = chemCompleted ? 60 : 0;
-  const elecPct = elecCompleted ? 70 : 0;
-  const overallPct = Math.round((physicsPct + chemPct + elecPct) / 3);
+  const physicsPct = Math.round((physicsCount / 3) * 100);
+  const chemPct = Math.round((chemCount / 3) * 100);
+  const elecPct = Math.round((elecCount / 3) * 100);
+  const overallPct = Math.round(((physicsCount + chemCount + elecCount) / 9) * 100);
 
   const fallbackActivity = DAYS_ORDER.map(d => ({
     day: d,
